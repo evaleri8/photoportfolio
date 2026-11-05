@@ -15,11 +15,16 @@
     const previous = select.value;
     select.replaceChildren();
     for (const category of categories) {
-      const option = new Option(category.title.toLocaleLowerCase('ru-RU').replace(/^./, c => c.toLocaleUpperCase('ru-RU')), category.title);
+      const label = category.title.toLocaleLowerCase('ru-RU').replace(/^./, (letter) =>
+        letter.toLocaleUpperCase('ru-RU'),
+      );
+      const option = new Option(label, category.title);
       select.append(option);
     }
     select.append(new Option('Пока не знаю / другое', 'Пока не знаю / другое'));
-    if ([...select.options].some(option => option.value === previous)) select.value = previous;
+    if ([...select.options].some((option) => option.value === previous)) {
+      select.value = previous;
+    }
   }
 
   if (!stage) return;
@@ -52,7 +57,9 @@
   }
 
   const sets = new Map([['all', shuffle(distinctPhotos('all')).slice(0, 4)]]);
-  for (const category of categories) sets.set(category.id, shuffle(distinctPhotos(category.id)).slice(0, 4));
+  for (const category of categories) {
+    sets.set(category.id, shuffle(distinctPhotos(category.id)).slice(0, 4));
+  }
 
   function makeButton(id, label, index) {
     const button = document.createElement('button');
@@ -76,7 +83,9 @@
   if (categories.length > 4) wordField.classList.add('explorer-words-expanded');
 
   makeButton('all', 'by.erzhee', 0);
-  categories.forEach((category, i) => makeButton(category.id, category.title.toLocaleLowerCase('ru-RU'), i + 1));
+  categories.forEach((category, i) => {
+    makeButton(category.id, category.title.toLocaleLowerCase('ru-RU'), i + 1);
+  });
 
   wordField.addEventListener('pointerleave', event => {
     if (event.pointerType !== 'touch') render(selected);
@@ -113,7 +122,9 @@
       photoField.replaceChildren();
       photoField.dataset.count = String(photos.length);
       if (photos.length) {
-        photos.forEach((photo, index) => photoField.append(makePhoto(photo, index, id === 'all')));
+        photos.forEach((photo, index) => {
+          photoField.append(makePhoto(photo, index, id === 'all'));
+        });
       } else {
         const empty = document.createElement('p');
         empty.className = 'explorer-empty';

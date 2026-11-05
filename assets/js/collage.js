@@ -34,21 +34,23 @@
     root.append(slide);
     return slide;
   });
-  const link = document.querySelector("[data-current-project]"),
-    label = document.querySelector("[data-current-title]"),
-    counter = document.querySelector("[data-collage-count]"),
-    dots = document.querySelector(".collage-dots"),
-    pause = document.querySelector("[data-collage-pause]");
+  const link = document.querySelector("[data-current-project]");
+  const label = document.querySelector("[data-current-title]");
+  const counter = document.querySelector("[data-collage-count]");
+  const dots = document.querySelector(".collage-dots");
+  const pause = document.querySelector("[data-collage-pause]");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  let current = 0,
-    timer,
-    paused = reduced.matches,
-    hovered = false;
+  let current = 0;
+  let timer;
+  let paused = reduced.matches;
+  let hovered = false;
   function sync() {
     const p = viable[current];
     link.href = p.url;
     label.textContent = p.title;
-    counter.textContent = `${String(current + 1).padStart(2, "0")} / ${String(viable.length).padStart(2, "0")}`;
+    counter.textContent =
+      `${String(current + 1).padStart(2, "0")} / ` +
+      `${String(viable.length).padStart(2, "0")}`;
     dots.querySelectorAll("button").forEach((b, i) => {
       b.setAttribute("aria-pressed", String(i === current));
       b.classList.toggle("active", i === current);

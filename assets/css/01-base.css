@@ -1,33 +1,40 @@
 /* Общие стили, компоненты и базовая адаптация */
+
 :root {
   --bg: #202222;
   --paper: #eeeee7;
   --accent: #ff6a24;
   --muted: #a5aaa5;
 }
+
 * {
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 92px;
 }
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--paper);
   font-family: Manrope, Arial, sans-serif;
 }
+
 button,
 input,
 textarea,
 select {
   font: inherit;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 button,
 a,
 input,
@@ -35,6 +42,7 @@ textarea,
 select {
   -webkit-tap-highlight-color: transparent;
 }
+
 button {
   cursor: pointer;
 }
@@ -46,6 +54,7 @@ select:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 5px;
 }
+
 header {
   height: 88px;
   padding: 0 3.2%;
@@ -58,12 +67,14 @@ header {
   top: 0;
   z-index: 20;
 }
+
 .brand {
   display: flex;
   align-items: center;
   gap: 20px;
   white-space: nowrap;
 }
+
 .brand b {
   font-size: 43px;
   font-weight: 900;
@@ -72,15 +83,18 @@ header {
   transform: skew(-8deg);
   padding-right: 7px;
 }
+
 .brand i {
   color: var(--accent);
   font-size: 28px;
 }
+
 .brand span {
   font-size: 11px;
   letter-spacing: 5px;
   font-weight: 800;
 }
+
 nav {
   display: flex;
   gap: 28px;
@@ -88,10 +102,12 @@ nav {
   font-size: 11px;
   font-weight: 700;
 }
+
 nav a:hover,
 .text-link:hover {
   color: var(--accent);
 }
+
 .button {
   display: inline-flex;
   justify-content: space-between;
@@ -103,26 +119,29 @@ nav a:hover,
   color: #141717;
   font-size: 12px;
   font-weight: 800;
-  transition:
-    background 0.2s,
-    transform 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
+
 .button:hover {
   background: #ff874d;
   transform: translateY(-2px);
 }
+
 .button span {
   font-size: 21px;
   line-height: 1;
 }
+
 .header-cta {
   font-size: 10px;
   padding: 12px 16px;
   gap: 20px;
 }
+
 .menu {
   display: none;
 }
+
 .hero {
   height: min(850px, calc(100svh - 88px));
   min-height: 620px;
@@ -131,19 +150,20 @@ nav a:hover,
   overflow: hidden;
   background: #10191c;
 }
+
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 65% center;
 }
+
 .hero-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, #081417b0, transparent 75%),
-    linear-gradient(0deg, #10191c99, transparent 45%);
+  background: linear-gradient(90deg, #081417b0, transparent 75%), linear-gradient(0deg, #10191c99, transparent 45%);
 }
+
 .torn {
   position: absolute;
   inset: 0 0 0 auto;
@@ -168,6 +188,7 @@ nav a:hover,
     100% 0
   );
 }
+
 .torn img {
   width: 100%;
   height: 100%;
@@ -175,17 +196,20 @@ nav a:hover,
   filter: grayscale(1);
   transform: translateX(9px);
 }
+
 .eyebrow {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 3px;
   line-height: 1.8;
 }
+
 .hero-label {
   position: absolute;
   top: 37px;
   left: 3.3%;
 }
+
 .cross {
   position: absolute;
   left: 3.3%;
@@ -193,11 +217,13 @@ nav a:hover,
   font: 30px monospace;
   color: var(--accent);
 }
+
 .hero-copy {
   position: absolute;
   left: 3.3%;
   bottom: 90px;
 }
+
 h1,
 h2 {
   font-family: Oswald, "Arial Narrow", Impact, sans-serif;
@@ -206,13 +232,16 @@ h2 {
   margin: 0;
   line-height: 1.05;
 }
+
 h1 {
   font-size: clamp(65px, 7.1vw, 116px);
   font-stretch: condensed;
 }
+
 h1 span {
   position: relative;
 }
+
 h1 span:after {
   content: "";
   position: absolute;
@@ -224,9 +253,11 @@ h1 span:after {
   clip-path: polygon(0 50%, 98% 0, 100% 40%, 2% 100%);
   transform: rotate(-3deg);
 }
+
 .hero-copy .button {
   margin-top: 40px;
 }
+
 .hero-foot {
   position: absolute;
   bottom: 25px;
@@ -237,56 +268,68 @@ h1 span:after {
   font-size: 8px;
   letter-spacing: 2px;
 }
+
 .corner {
   position: absolute;
   width: 17px;
   height: 17px;
   border-color: #d1d4c5;
 }
+
 .tl {
   left: 18px;
   top: 18px;
   border-top: 1px solid;
   border-left: 1px solid;
 }
+
 .br {
   right: 18px;
   bottom: 18px;
   border-bottom: 1px solid;
   border-right: 1px solid;
 }
+
 .section {
   padding: 90px 4%;
 }
+
 .section-heading {
   display: flex;
   align-items: center;
   gap: 40px;
 }
+
 .section-heading h2 {
   font-size: clamp(54px, 7.6vw, 114px);
 }
+
 .orange {
   color: var(--accent);
 }
+
 .section-heading h2 span {
   font: inherit;
   margin-left: 8px;
 }
+
 .line {
   flex: 1;
   height: 1px;
   background: #777e74;
 }
+
 .mono {
   font: 11px monospace;
   letter-spacing: 1px;
 }
+
 .filters {
   display: flex;
   gap: 25px;
   margin: 34px 0;
 }
+
 .filters button {
   color: var(--paper);
   background: none;
@@ -296,19 +339,23 @@ h1 span:after {
   letter-spacing: 2px;
   padding: 11px 15px;
 }
+
 .filters button.active {
   background: var(--accent);
   color: #141717;
 }
+
 .filters sup {
   margin-left: 9px;
   font-size: 8px;
 }
+
 .gallery {
   display: grid;
   grid-template-columns: 1.45fr 1fr 1fr;
   gap: 18px;
 }
+
 .project {
   border: 0;
   padding: 0;
@@ -317,30 +364,34 @@ h1 span:after {
   text-align: left;
   min-width: 0;
 }
+
 .photo {
   position: relative;
   height: 450px;
   overflow: hidden;
   background: #161b1b;
 }
+
 .photo img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition:
-    transform 0.6s,
-    filter 0.6s;
+  transition: transform 0.6s, filter 0.6s;
 }
+
 .project:hover img {
   transform: scale(1.045);
 }
+
 .project-portrait .photo img {
   object-position: 76% center;
   filter: grayscale(1);
 }
+
 .project-portrait:hover img {
   filter: grayscale(0.3);
 }
+
 .index {
   position: absolute;
   top: 15px;
@@ -350,6 +401,7 @@ h1 span:after {
   padding: 4px 9px;
   font: 600 17px Oswald;
 }
+
 .view {
   position: absolute;
   bottom: 20px;
@@ -361,10 +413,12 @@ h1 span:after {
   background: #151515c9;
   padding: 12px;
 }
+
 .project:hover .view,
 .project:focus-visible .view {
   opacity: 1;
 }
+
 .caption {
   display: flex;
   justify-content: space-between;
@@ -373,22 +427,27 @@ h1 span:after {
   font: 500 16px Oswald;
   letter-spacing: 0.5px;
 }
+
 .project small {
   font-size: 10px;
   color: var(--muted);
 }
+
 .project[hidden] {
   display: none;
 }
+
 .gallery.filtered {
   grid-template-columns: minmax(0, 700px);
 }
+
 .demo-note {
   font-size: 9px;
   letter-spacing: 1px;
   color: #a5aaa5;
   margin: 38px 0 0;
 }
+
 .ticker {
   white-space: nowrap;
   overflow: hidden;
@@ -398,9 +457,11 @@ h1 span:after {
   word-spacing: 10px;
   transform: rotate(-1deg);
 }
+
 .ticker span {
   color: var(--accent);
 }
+
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -408,9 +469,11 @@ h1 span:after {
   align-items: center;
   padding-block: 110px;
 }
+
 .about-visual {
   position: relative;
 }
+
 .about-visual img {
   width: 100%;
   height: 540px;
@@ -418,6 +481,7 @@ h1 span:after {
   object-position: 75%;
   filter: grayscale(1);
 }
+
 .image-note {
   position: absolute;
   bottom: 24px;
@@ -429,22 +493,27 @@ h1 span:after {
   letter-spacing: 2px;
   transform: rotate(-4deg);
 }
+
 .about h2 {
   font-size: clamp(45px, 5vw, 76px);
   margin: 25px 0 35px;
 }
+
 .about em {
   font-style: normal;
   color: var(--accent);
 }
+
 .about-copy > p:not(.eyebrow) {
   max-width: 440px;
   font-size: 15px;
   line-height: 1.9;
 }
+
 .muted {
   color: var(--muted);
 }
+
 .text-link {
   display: flex;
   align-items: center;
@@ -455,9 +524,11 @@ h1 span:after {
   font-weight: 800;
   gap: 20px;
 }
+
 .text-link span {
   font-size: 26px;
 }
+
 .contact {
   background: #171a19;
   border-top: 1px solid #555b51;
@@ -465,31 +536,38 @@ h1 span:after {
   grid-template-columns: 1fr 1fr;
   gap: 10%;
 }
+
 .contact h2 {
   font-size: clamp(80px, 11vw, 160px);
   line-height: 1.03;
   margin-top: 30px;
 }
+
 .contact h2 span {
   color: var(--accent);
 }
+
 .contact p {
   color: #c3c6be;
   font-size: 13px;
   line-height: 1.8;
 }
+
 .contact .eyebrow {
   font-size: 9px;
 }
+
 form {
   padding-top: 20px;
 }
+
 label {
   display: block;
   font-size: 10px;
   letter-spacing: 2px;
   margin-bottom: 30px;
 }
+
 input,
 textarea,
 select {
@@ -505,20 +583,25 @@ select {
   letter-spacing: 0;
   resize: vertical;
 }
+
 select option {
   background: #202222;
 }
+
 form .button {
   width: 100%;
 }
+
 .contact .form-note {
   font-size: 10px;
   color: var(--muted);
   line-height: 1.6;
 }
+
 #form-status {
   color: var(--accent);
 }
+
 footer {
   display: flex;
   align-items: center;
@@ -526,11 +609,13 @@ footer {
   padding: 30px 4%;
   gap: 24px;
 }
+
 footer > span,
 footer > a:last-child {
   font-size: 9px;
   letter-spacing: 1px;
 }
+
 dialog {
   background: #131716;
   color: var(--paper);
@@ -539,10 +624,12 @@ dialog {
   width: min(1100px, 94vw);
   max-height: 94svh;
 }
+
 dialog::backdrop {
   background: #000e;
   backdrop-filter: blur(8px);
 }
+
 .viewer-top,
 .viewer-bottom {
   display: flex;
@@ -551,6 +638,7 @@ dialog::backdrop {
   font-size: 12px;
   padding: 8px 0 16px;
 }
+
 dialog button {
   background: transparent;
   color: var(--paper);
@@ -558,18 +646,22 @@ dialog button {
   padding: 8px;
   font-size: 13px;
 }
+
 #viewer-image {
   display: block;
   width: 100%;
   height: 67svh;
   object-fit: contain;
 }
+
 .viewer-bottom {
   padding: 15px 0 0;
 }
+
 .viewer-bottom button {
   font-size: 28px;
 }
+
 .skip {
   position: fixed;
   left: 15px;
@@ -578,15 +670,18 @@ dialog button {
   padding: 10px;
   z-index: 100;
 }
+
 .skip:focus {
   top: 10px;
 }
+
 @media (min-width: 1600px) {
   body {
     max-width: 1920px;
     margin: auto;
   }
 }
+
 @media (max-width: 900px) {
   header {
     gap: 20px;
@@ -622,6 +717,7 @@ dialog button {
     height: 440px;
   }
 }
+
 @media (max-width: 600px) {
   html {
     scroll-padding-top: 70px;
@@ -668,9 +764,7 @@ dialog button {
     object-position: 67% center;
   }
   .hero-shade {
-    background:
-      linear-gradient(0deg, #081417e0, transparent 85%),
-      linear-gradient(90deg, #08141766, transparent);
+    background: linear-gradient(0deg, #081417e0, transparent 85%), linear-gradient(90deg, #08141766, transparent);
   }
   .hero-label {
     left: 6%;
@@ -804,6 +898,7 @@ dialog button {
     height: 65svh;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

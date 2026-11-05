@@ -25,7 +25,9 @@ window.PORTFOLIO_CATEGORIES = [
         subtitle: "Люди и их характер.",
         summary: "Портреты при естественном и городском свете.",
         story:
-          "В портретной съёмке я оставляю место движению и разговору. Мне хочется, чтобы в кадре человек узнавал себя — в привычном жесте, выражении лица или взгляде.",
+          "В портретной съёмке я оставляю место движению и разговору. " +
+          "Мне хочется, чтобы в кадре человек узнавал себя — " +
+          "в привычном жесте, выражении лица или взгляде.",
         url: "project-faces.html", // Старая ссылка продолжает работать; новым проектам не нужна.
         grayscale: true, // Чёрно-белая обложка в каталоге и на странице проекта.
         photos: [
@@ -56,7 +58,9 @@ window.PORTFOLIO_CATEGORIES = [
         subtitle: "Наблюдения за ночным городом.",
         summary: "Наблюдения за ночным городом.",
         story:
-          "Эта серия — о городе после наступления темноты. Я замечаю отражения, случайных прохожих и свет в окнах: небольшие детали, которые днём легко пропустить.",
+          "Эта серия — о городе после наступления темноты. " +
+          "Я замечаю отражения, случайных прохожих и свет в окнах: " +
+          "небольшие детали, которые днём легко пропустить.",
         url: "project-night.html",
         photos: [
           {
@@ -81,7 +85,9 @@ window.PORTFOLIO_CATEGORIES = [
         subtitle: "Концертная фотография.",
         summary: "Свет сцены и люди в зале.",
         story:
-          "На концертах я снимаю не только сцену. Мне важны реакции людей, движение света и моменты между песнями — всё, из чего складывается ощущение вечера.",
+          "На концертах я снимаю не только сцену. " +
+          "Мне важны реакции людей, движение света и моменты между песнями — " +
+          "всё, из чего складывается ощущение вечера.",
         url: "project-live.html",
         photos: [
           { src: "assets/images/live.jpg", alt: "Толпа и огни концертной сцены", position: "center" },
@@ -111,7 +117,9 @@ window.RAW_PROJECTS = window.PORTFOLIO_CATEGORIES.flatMap((category) =>
 ).sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 
 window.pickCollagePhotos = function (photos, random = Math.random) {
-  const unique = photos.filter((photo, i, all) => all.findIndex((item) => item.src === photo.src) === i);
+  const unique = photos.filter(
+    (photo, i, all) => all.findIndex((item) => item.src === photo.src) === i,
+  );
   if (unique.length <= 3) return unique.slice();
   const shuffled = unique.slice();
   for (let i = shuffled.length - 1; i > 0; i--) {

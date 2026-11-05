@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#191b1a" />
-    <meta name="description" content="Обсудить съёмку с by.erzhee: студийные и выездные истории, концерты и мероприятия." />
+    <meta
+      name="description"
+      content="Обсудить съёмку с by.erzhee: студийные и выездные истории, концерты и мероприятия."
+    />
     <title>Обсудить съёмку — by.erzhee</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
     <link href="assets/css/main.css" rel="stylesheet" />
     <script src="assets/js/intro-bootstrap.js"></script>
   </head>
@@ -19,15 +25,30 @@
         <div class="contact-copy">
           <p class="eyebrow">01 / НАЧАЛО ИСТОРИИ</p>
           <h1>ЕСТЬ<br />ИДЕЯ<span class="contact-question">?</span></h1>
-          <p class="contact-lead">Расскажите, что хочется сохранить в кадре. Иногда для начала достаточно пары слов.</p>
-          <div class="contact-side-note"><span class="contact-small-dot" aria-hidden="true"></span> Давайте придумаем что-то вместе.</div>
+          <p class="contact-lead">
+            Расскажите, что хочется сохранить в кадре. Иногда для начала достаточно пары слов.
+          </p>
+          <div class="contact-side-note">
+            <span class="contact-small-dot" aria-hidden="true"></span> Давайте придумаем что-то вместе.
+          </div>
         </div>
         <form id="brief" class="contact-brief">
-          <div class="brief-heading"><span>НЕБОЛЬШОЙ БРИФ</span><span>01 — 03</span></div>
-          <label>КАК ВАС ЗОВУТ
-            <input autocomplete="name" maxlength="100" name="name" placeholder="Ваше имя" required />
+          <div class="brief-heading">
+            <span>НЕБОЛЬШОЙ БРИФ</span>
+            <span>01 — 03</span>
+          </div>
+          <label>
+            КАК ВАС ЗОВУТ
+            <input
+              autocomplete="name"
+              maxlength="100"
+              name="name"
+              placeholder="Ваше имя"
+              required
+            />
           </label>
-          <label>ФОРМАТ СЪЁМКИ
+          <label>
+            ФОРМАТ СЪЁМКИ
             <select name="type" data-brief-categories aria-label="Формат съёмки">
               <option>Студийная съёмка</option>
               <option>Выездная съёмка</option>
@@ -36,37 +57,62 @@
               <option>Пока не знаю</option>
             </select>
           </label>
-          <label>ПАРА СЛОВ ОБ ИДЕЕ
-            <textarea maxlength="3000" name="idea" placeholder="Настроение, место, желаемая дата…" required rows="3"></textarea>
+          <label>
+            ПАРА СЛОВ ОБ ИДЕЕ
+            <textarea
+              maxlength="3000"
+              name="idea"
+              placeholder="Настроение, место, желаемая дата…"
+              required
+              rows="3"
+            ></textarea>
           </label>
           <button class="button" type="submit">СОХРАНИТЬ БРИФ</button>
-          <p class="form-note">Бриф сохранится на вашем устройстве. Отправка фотографу пока не подключена.</p>
+          <p class="form-note">
+            Бриф сохранится на вашем устройстве. Отправка фотографу пока не подключена.
+          </p>
           <p id="form-status" role="status"></p>
         </form>
       </section>
-
       <section class="shoot-explorer section" aria-labelledby="shoot-explorer-heading">
         <div class="shoot-explorer-heading">
           <div>
             <p class="eyebrow">02 / ВЫБЕРИТЕ НАСТРОЕНИЕ</p>
             <h2 id="shoot-explorer-heading">У КАЖДОЙ ИСТОРИИ<br /><span>СВОЙ КАДР.</span></h2>
           </div>
-          <p class="shoot-explorer-hint">Наведите на направление — и фотографии изменятся.<br />На телефоне просто нажмите.</p>
+          <p class="shoot-explorer-hint">
+            Наведите на направление — и фотографии изменятся.<br />На телефоне просто нажмите.
+          </p>
         </div>
         <div class="shoot-explorer-stage" data-shoot-explorer>
-          <div class="shoot-explorer-words" data-explorer-words role="group" aria-label="Предпросмотр съёмок">
+          <div
+            class="shoot-explorer-words"
+            data-explorer-words
+            role="group"
+            aria-label="Предпросмотр съёмок"
+          >
             <!-- Названия добавляются из assets/js/projects.js -->
           </div>
           <div class="shoot-explorer-visual">
-            <div class="shoot-explorer-photos" data-explorer-photos aria-label="Подборка фотографий"></div>
+            <div
+              class="shoot-explorer-photos"
+              data-explorer-photos
+              aria-label="Подборка фотографий"
+            >
+            </div>
             <div class="shoot-explorer-image-label">
               <span data-explorer-caption>ИЗБРАННЫЕ КАДРЫ</span>
               <span data-explorer-count>01 / 04</span>
             </div>
           </div>
         </div>
-        <div class="shoot-explorer-end"><span>СВОЯ ИСТОРИЯ — СВОЙ ВЗГЛЯД</span><a href="works.html">СМОТРЕТЬ ВСЕ РАБОТЫ</a></div>
-        <noscript><p>Чтобы увидеть подборки по категориям, включите JavaScript в браузере.</p></noscript>
+        <div class="shoot-explorer-end">
+          <span>СВОЯ ИСТОРИЯ — СВОЙ ВЗГЛЯД</span>
+          <a href="works.html">СМОТРЕТЬ ВСЕ РАБОТЫ</a>
+        </div>
+        <noscript>
+          <p>Чтобы увидеть подборки по категориям, включите JavaScript в браузере.</p>
+        </noscript>
       </section>
     </main>
     <script src="assets/js/app.js"></script>

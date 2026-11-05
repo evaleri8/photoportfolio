@@ -1,5 +1,7 @@
 /* Текущая тема: кнопки, типографика и мобильные уточнения */
+
 /* Consistent cut corners and quieter personal portfolio copy. */
+
 .button,
 button,
 .view,
@@ -15,27 +17,33 @@ button,
   );
   border-radius: 0;
 }
+
 button:focus-visible,
 .button:focus-visible {
   outline-offset: -3px;
 }
+
 .header-cta {
   --cut: 12px;
 }
+
 .filters button {
   --cut: 8px;
   transform: none;
 }
+
 .collage-controls button {
   --cut: 8px;
   background: #1b201c;
   color: #f4eee5;
   border: 0;
 }
+
 .collage-controls button:hover {
   background: #f4eee5;
   color: #1b201c;
 }
+
 .collage-dots button {
   --cut: 4px;
   transform: none;
@@ -46,40 +54,49 @@ button:focus-visible,
   background: #ff8a58;
   border: 0;
 }
+
 .collage-dots button.active {
   background: #1b201c;
 }
+
 .menu {
   --cut: 7px;
   background: #2c312b;
   padding: 6px 12px;
 }
+
 .view {
   padding: 16px 22px;
   letter-spacing: 2px;
   --cut: 12px;
 }
+
 .hero-bottom {
   clip-path: polygon(0 0, 29% 0, 31% 14px, 70% 14px, 72% 0, 100% 0, 100% 100%, 0 100%);
   padding-top: 30px;
   min-height: 91px;
 }
+
 .home-page h1 {
   font-size: clamp(66px, 7.5vw, 125px);
   transform: none;
   letter-spacing: -3px;
 }
+
 .home-page .hero-copy {
   bottom: 145px;
 }
+
 .home-page .hero-copy .button {
   transform: none;
   margin-top: 24px;
   background: var(--accent);
 }
+
 .home-page .hero-copy .button:hover {
   transform: translateY(-2px);
 }
+
 .hero-description {
   max-width: 410px;
   font-size: 14px;
@@ -88,31 +105,39 @@ button:focus-visible,
   margin: 24px 0 0;
   text-shadow: 0 1px 9px #000;
 }
+
 .works-page .section-heading h2 {
   font-size: clamp(64px, 7vw, 110px);
   transform: none;
 }
+
 .about-page .about h2 {
   font-size: clamp(50px, 5.5vw, 85px);
   transform: none;
   letter-spacing: -2px;
 }
+
 .contact-page .contact h2 {
   font-size: clamp(64px, 7vw, 110px);
   transform: none;
 }
+
 .contact-page .contact h2 span {
   text-shadow: none;
 }
+
 .project-title h1 {
   transform: none;
 }
+
 .text-link {
   padding-right: 15px;
 }
+
 .next-project {
   --cut: 25px;
 }
+
 @media (max-width: 600px) {
   .home-page h1 {
     font-size: clamp(39px, 9.7vw, 59px);
@@ -155,12 +180,15 @@ button:focus-visible,
     width: 51%;
   }
 }
+
 /* Наклонные акценты и угловатая полоса под шапкой. */
+
 header {
   border-bottom: 0;
   position: relative;
   z-index: 20;
 }
+
 header::after {
   content: "";
   position: absolute;
@@ -172,13 +200,16 @@ header::after {
   clip-path: polygon(0 0, 100% 0, 100% 6px, 73% 6px, 71% 100%, 31% 100%, 29% 6px, 0 6px);
   pointer-events: none;
 }
+
 .home-page h1 {
   transform: rotate(-3deg);
   transform-origin: left center;
 }
+
 .home-page .hero-copy .button {
   transform: rotate(-2deg);
 }
+
 .home-page .hero-copy .button:hover {
   transform: rotate(-2deg) translateY(-2px);
 }
@@ -189,12 +220,15 @@ header::after {
   transform: rotate(-2deg);
   transform-origin: left center;
 }
+
 .filters button.active {
   transform: rotate(-3deg);
 }
+
 .hero-description {
   margin-top: 30px;
 }
+
 @media (max-width: 600px) {
   header::after {
     height: 13px;
@@ -213,7 +247,9 @@ header::after {
 /* Предыдущий / следующий коллаж: тонкие рисованные шевроны. */
 .collage-controls [data-collage-prev],
 .collage-controls [data-collage-next],
-.collage-controls [data-collage-pause] { position: relative; }
+.collage-controls [data-collage-pause] {
+  position: relative;
+}
 .collage-controls [data-collage-prev]::before,
 .collage-controls [data-collage-next]::before {
   content: "";
@@ -222,36 +258,75 @@ header::after {
   height: 8px;
   border-top: 1.7px solid currentColor;
   border-right: 1.7px solid currentColor;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
 }
-.collage-controls [data-collage-prev]::before { transform: translate(-35%, -50%) rotate(-135deg); }
-.collage-controls [data-collage-next]::before { transform: translate(-65%, -50%) rotate(45deg); }
+
+.collage-controls [data-collage-prev]::before {
+  transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+.collage-controls [data-collage-next]::before {
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+
 .collage-controls [data-collage-pause]::before {
   content: "";
   position: absolute;
   width: 10px;
   height: 12px;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: linear-gradient(90deg, currentColor 0 3px, transparent 3px 7px, currentColor 7px 10px);
 }
+
 .collage-controls [data-collage-pause][data-state="paused"]::before {
-  width: 11px; height: 13px;
+  width: 11px;
+  height: 13px;
   background: currentColor;
   clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
 /* Бургер-меню: векторные линии средствами CSS, без символьного значка. */
-.menu { position: relative; width: 44px; height: 38px; }
-.menu::before, .menu::after {
-  content: ""; position: absolute; left: 12px; right: 12px;
-  height: 1.5px; background: currentColor;
+
+.menu {
+  position: relative;
+  width: 44px;
+  height: 38px;
+}
+
+.menu::before,
+.menu::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 1.5px;
+  background: currentColor;
   transition: transform .2s, top .2s;
 }
-.menu::before { top: 15px; }
-.menu::after { top: 22px; }
-.menu[aria-expanded="true"]::before { top: 19px; transform: rotate(45deg); }
-.menu[aria-expanded="true"]::after { top: 19px; transform: rotate(-45deg); }
+
+.menu::before {
+  top: 15px;
+}
+
+.menu::after {
+  top: 22px;
+}
+
+.menu[aria-expanded="true"]::before {
+  top: 19px;
+  transform: rotate(45deg);
+}
+
+.menu[aria-expanded="true"]::after {
+  top: 19px;
+  transform: rotate(-45deg);
+}
 
 /* В блоке пустой категории только текст, без случайной декоративной звёздочки. */
-.explorer-empty span { display: none; }
+
+.explorer-empty span {
+  display: none;
+}

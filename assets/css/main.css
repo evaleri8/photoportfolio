@@ -1,9 +1,16 @@
 /* Порядок подключения важен: последующие файлы уточняют базовые стили.
    Цвета и финальное оформление удобнее менять в 05-theme.css. */
+
 @import url("01-base.css");
+
 @import url("02-pages.css");
+
 @import url("03-intro.css");
+
 @import url("04-collages.css");
+
 @import url("05-theme.css");
+
 @import url("06-catalog.css");
+
 @import url("07-contact.css");
