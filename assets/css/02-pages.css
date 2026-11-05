@@ -1,0 +1,550 @@
+/* Многостраничная композиция и оформление проектов */
+/* by.erzhee / SECOND EDITION */
+:root {
+  --accent: #ff5a1f;
+  --bg: #191b1a;
+}
+body {
+  overflow-x: clip;
+}
+header {
+  background: #191b1a;
+  height: 82px;
+  border-bottom: 1px solid #555b51;
+  position: relative;
+}
+header .brand b {
+  font-size: 48px;
+}
+nav a[aria-current="page"] {
+  color: var(--accent);
+}
+nav a[aria-current="page"]:before {
+  content: "↗ ";
+  color: var(--accent);
+}
+.header-cta {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 94% 100%, 0 100%);
+}
+footer {
+  border-top: 1px solid #51574d;
+  min-height: 85px;
+}
+.home-page .hero {
+  height: calc(100svh - 167px);
+  min-height: 620px;
+  margin: 0;
+  isolation: isolate;
+}
+.home-page .hero-image {
+  object-position: 70% 42%;
+}
+.home-page .hero-copy {
+  bottom: 135px;
+  left: 4%;
+  right: 3%;
+  z-index: 3;
+}
+.home-page h1 {
+  font-size: clamp(76px, 9.3vw, 160px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+.home-page h1 span {
+  display: inline-block;
+  color: var(--accent);
+  text-shadow: 3px 2px #151917;
+}
+.home-page h1 span:after {
+  display: none;
+}
+.home-page .hero-copy .button {
+  margin-top: 35px;
+  background: var(--paper);
+  padding: 18px 25px;
+  transform: rotate(-2deg);
+}
+.home-page .hero-copy .button:hover {
+  background: var(--accent);
+  transform: rotate(0);
+}
+.home-page .hero-label {
+  top: 30px;
+  left: 4%;
+}
+.home-page .hero-shade {
+  background:
+    linear-gradient(90deg, #101817a6, transparent 85%),
+    linear-gradient(0deg, #101817bb, transparent 70%);
+}
+.hero-stamp {
+  position: absolute;
+  right: 7%;
+  top: 8%;
+  font: 700 21px Oswald;
+  line-height: 1.05;
+  background: var(--accent);
+  padding: 16px 22px;
+  color: #171a18;
+  transform: rotate(8deg);
+  border: 2px solid #171a18;
+  box-shadow: 4px 4px 0 var(--paper);
+  z-index: 4;
+}
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--accent);
+  color: #171a18;
+  display: flex;
+  justify-content: space-between;
+  padding: 21px 4%;
+  font: 600 17px Oswald;
+  letter-spacing: 2px;
+  clip-path: polygon(
+    0 8%,
+    8% 0,
+    15% 8%,
+    28% 2%,
+    40% 10%,
+    55% 0,
+    70% 7%,
+    90% 1%,
+    100% 8%,
+    100% 100%,
+    0 100%
+  );
+}
+.giant-index {
+  position: absolute;
+  right: 9%;
+  bottom: 90px;
+  font: 700 170px Oswald;
+  color: transparent;
+  -webkit-text-stroke: 1px #e7e9db77;
+  z-index: 1;
+  transform: rotate(8deg);
+}
+.torn {
+  width: 9%;
+  clip-path: polygon(
+    37% 0,
+    23% 6%,
+    29% 9%,
+    17% 15%,
+    24% 19%,
+    9% 27%,
+    20% 33%,
+    7% 40%,
+    15% 48%,
+    3% 55%,
+    12% 61%,
+    0 70%,
+    11% 77%,
+    2% 86%,
+    8% 91%,
+    0 100%,
+    100% 100%,
+    100% 0
+  );
+}
+.works-page .works {
+  padding-top: 50px;
+}
+.works-page .section-heading h2 {
+  font-size: clamp(80px, 9vw, 148px);
+  line-height: 0.96;
+  position: relative;
+  transform: rotate(-2deg);
+}
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--paper);
+}
+.section-heading h2 sup {
+  color: var(--accent);
+  font: 500 22px Oswald;
+  position: absolute;
+  top: 10px;
+  right: -65px;
+  letter-spacing: 0;
+}
+.works-page .section-heading {
+  align-items: flex-end;
+  gap: 85px;
+}
+.works-page .section-heading .line {
+  background: var(--accent);
+  height: 7px;
+  transform: rotate(-3deg);
+}
+.works-page .filters {
+  margin: 40px 0 30px;
+  border-bottom: 1px solid #63695d;
+  padding-bottom: 22px;
+}
+.filters .active {
+  transform: rotate(-3deg);
+}
+.works-page .gallery {
+  gap: 24px;
+  align-items: start;
+}
+.works-page .project:nth-child(2) {
+  margin-top: 65px;
+  transform: rotate(2deg);
+}
+.works-page .project:nth-child(3) {
+  margin-top: 130px;
+  transform: rotate(-2deg);
+}
+.works-page .photo {
+  height: 470px;
+  clip-path: polygon(0 0, 100% 1%, 100% 95%, 93% 100%, 0 99%);
+}
+.works-page .project-live .photo {
+  height: 540px;
+}
+.works-page .gallery.filtered .project {
+  margin-top: 0;
+  transform: none;
+}
+.works-page .caption {
+  font-size: 20px;
+}
+.index {
+  background: var(--paper);
+  transform: rotate(-5deg);
+}
+.view {
+  background: var(--accent);
+  color: #131613;
+  font-weight: 800;
+}
+.about-page .about {
+  min-height: calc(100svh - 167px);
+  padding-block: 60px;
+  gap: 7%;
+}
+.about-page .about-visual {
+  transform: rotate(-3deg);
+  border: 8px solid var(--paper);
+  box-shadow: 18px 18px 0 var(--accent);
+}
+.about-page .about-visual img {
+  display: block;
+  height: 570px;
+}
+.about-page .about h2 {
+  font-size: clamp(55px, 6.8vw, 110px);
+  line-height: 0.98;
+  transform: rotate(-2deg);
+}
+.about-page .image-note {
+  background: var(--paper);
+  color: #171a18;
+}
+.contact-page .contact {
+  min-height: calc(100svh - 167px);
+  background: var(--accent);
+  color: #161916;
+  border: 0;
+  gap: 8%;
+  padding-top: 65px;
+}
+.contact-page .contact h2 {
+  font-size: clamp(75px, 8.5vw, 140px);
+  transform: rotate(-3deg);
+  letter-spacing: -4px;
+}
+.contact-page .contact h2 span {
+  color: var(--paper);
+  text-shadow: 4px 4px #171a18;
+}
+.contact-page .contact p {
+  color: #242920;
+}
+.contact-page input,
+.contact-page select,
+.contact-page textarea {
+  color: #171a18;
+  border-color: #171a18;
+}
+.contact-page input::placeholder,
+.contact-page textarea::placeholder {
+  color: #423c30;
+}
+.contact-page select option {
+  background: var(--paper);
+}
+.contact-page form .button {
+  background: #171a18;
+  color: var(--paper);
+}
+.contact-page .contact .form-note {
+  color: #242920;
+}
+.contact-page #form-status {
+  font-weight: 800;
+}
+.project-intro {
+  padding: 35px 4% 50px;
+}
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  font: 11px monospace;
+  letter-spacing: 1px;
+}
+.project-top a:hover {
+  color: var(--accent);
+}
+.project-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 45px;
+}
+.project-title h1 {
+  font-size: clamp(70px, 10vw, 160px);
+  line-height: 0.95;
+  transform: rotate(-2deg);
+  color: var(--accent);
+  letter-spacing: -4px;
+}
+.project-title p {
+  font-size: 14px;
+  max-width: 220px;
+  margin-bottom: 15px;
+}
+.project-cover {
+  margin: 0 2%;
+  position: relative;
+}
+.project-cover img {
+  display: block;
+  width: 100%;
+  max-height: 850px;
+  object-fit: cover;
+}
+.mono-photo img {
+  filter: grayscale(1);
+}
+.project-cover figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 10px;
+  border-bottom: 1px solid #676d60;
+  font: 10px monospace;
+  letter-spacing: 1px;
+}
+.project-story-text {
+  padding: 70px 8%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px 8%;
+}
+.project-story-text p {
+  font-size: clamp(21px, 2.8vw, 38px);
+  line-height: 1.45;
+  margin: 0;
+}
+.project-story-text .text-link {
+  grid-column: 2;
+}
+.next-project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  background: var(--accent);
+  color: #171a18;
+  padding: 40px 4%;
+  align-items: center;
+}
+.next-project > span {
+  grid-column: 1/-1;
+  font: 11px monospace;
+  letter-spacing: 2px;
+}
+.next-project strong {
+  font: 700 clamp(35px, 6vw, 90px) Oswald;
+  line-height: 1.05;
+}
+.next-project b {
+  font-size: 70px;
+}
+.next-project:hover {
+  background: var(--paper);
+}
+@media (max-width: 900px) {
+  .works-page .photo,
+  .works-page .project-live .photo {
+    height: 360px;
+  }
+  .works-page .section-heading {
+    gap: 65px;
+  }
+  .about-page .about-visual img {
+    height: 470px;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    height: 70px;
+    z-index: 20;
+  }
+  header .brand b {
+    font-size: 38px;
+  }
+  nav {
+    top: 70px;
+  }
+  .home-page .hero {
+    height: calc(100svh - 70px);
+    min-height: 620px;
+    max-height: none;
+  }
+  .home-page .hero-copy {
+    left: 6%;
+    right: 3%;
+    bottom: 145px;
+  }
+  .home-page h1 {
+    font-size: clamp(53px, 12.5vw, 76px);
+    letter-spacing: -2.5px;
+    line-height: 1.03;
+  }
+  .home-page .hero-label {
+    font-size: 7px;
+    left: 6%;
+    top: 25px;
+    letter-spacing: 1.5px;
+  }
+  .hero-stamp {
+    top: 12%;
+    right: 9%;
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+  .home-page .hero-image {
+    object-position: 69% center;
+  }
+  .hero-bottom {
+    padding: 22px 6%;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .giant-index {
+    bottom: 100px;
+    font-size: 100px;
+  }
+  .home-page footer {
+    min-height: 80px;
+  }
+  .works-page .section-heading h2 {
+    font-size: 79px;
+  }
+  .works-page .section-heading {
+    gap: 25px;
+  }
+  .works-page .section-heading h2 sup {
+    font-size: 16px;
+    right: -45px;
+  }
+  .works-page .section-heading .mono {
+    font-size: 9px;
+  }
+  .works-page .filters {
+    margin-top: 25px;
+  }
+  .works-page .gallery {
+    gap: 38px;
+  }
+  .works-page .project:nth-child(2),
+  .works-page .project:nth-child(3) {
+    margin-top: 0;
+    transform: none;
+  }
+  .works-page .photo,
+  .works-page .project-live .photo {
+    height: 400px;
+  }
+  .works-page .project:nth-child(2) .photo {
+    transform: rotate(1deg);
+  }
+  .about-page .about {
+    gap: 50px;
+    padding: 40px 8% 60px;
+  }
+  .about-page .about-visual img {
+    height: 370px;
+  }
+  .about-page .about h2 {
+    font-size: 65px;
+  }
+  .contact-page .contact {
+    padding: 40px 6%;
+  }
+  .contact-page .contact h2 {
+    font-size: 76px;
+    letter-spacing: -3px;
+  }
+  .project-intro {
+    padding: 25px 6% 40px;
+  }
+  .project-top {
+    font-size: 9px;
+  }
+  .project-title {
+    display: block;
+    margin-top: 35px;
+  }
+  .project-title h1 {
+    font-size: 65px;
+    letter-spacing: -2px;
+  }
+  .project-title p {
+    margin-top: 30px;
+  }
+  .project-cover {
+    margin: 0 4%;
+  }
+  .project-cover img {
+    height: 480px;
+    object-position: 70%;
+  }
+  .project-cover figcaption {
+    font-size: 7px;
+    gap: 15px;
+  }
+  .project-story-text {
+    padding: 45px 6%;
+    display: block;
+  }
+  .project-story-text p {
+    margin-top: 20px;
+    font-size: 23px;
+  }
+  .next-project {
+    padding: 30px 6%;
+  }
+  .next-project strong {
+    font-size: 36px;
+  }
+  .next-project b {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .project-title h1 {
+    font-size: clamp(42px, 10.7vw, 65px);
+  }
+  .contact-page .contact h2 {
+    font-size: clamp(60px, 12.5vw, 76px);
+  }
+}

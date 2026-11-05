@@ -1,0 +1,209 @@
+/* Текущая тема: кнопки, типографика и мобильные уточнения */
+/* Consistent cut corners and quieter personal portfolio copy. */
+.button,
+button,
+.view,
+.text-link,
+.next-project {
+  --cut: 12px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,
+    0 100%
+  );
+  border-radius: 0;
+}
+button:focus-visible,
+.button:focus-visible {
+  outline-offset: -3px;
+}
+.header-cta {
+  --cut: 12px;
+}
+.filters button {
+  --cut: 8px;
+  transform: none;
+}
+.collage-controls button {
+  --cut: 8px;
+  background: #1b201c;
+  color: #f4eee5;
+  border: 0;
+}
+.collage-controls button:hover {
+  background: #f4eee5;
+  color: #1b201c;
+}
+.collage-dots button {
+  --cut: 4px;
+  transform: none;
+  min-width: 18px;
+  min-height: 18px;
+  width: 18px;
+  height: 18px;
+  background: #ff8a58;
+  border: 0;
+}
+.collage-dots button.active {
+  background: #1b201c;
+}
+.menu {
+  --cut: 7px;
+  background: #2c312b;
+  padding: 6px 12px;
+}
+.view {
+  padding: 16px 22px;
+  letter-spacing: 2px;
+  --cut: 12px;
+}
+.hero-bottom {
+  clip-path: polygon(0 0, 29% 0, 31% 14px, 70% 14px, 72% 0, 100% 0, 100% 100%, 0 100%);
+  padding-top: 30px;
+  min-height: 91px;
+}
+.home-page h1 {
+  font-size: clamp(66px, 7.5vw, 125px);
+  transform: none;
+  letter-spacing: -3px;
+}
+.home-page .hero-copy {
+  bottom: 145px;
+}
+.home-page .hero-copy .button {
+  transform: none;
+  margin-top: 24px;
+  background: var(--accent);
+}
+.home-page .hero-copy .button:hover {
+  transform: translateY(-2px);
+}
+.hero-description {
+  max-width: 410px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #f0f0e7;
+  margin: 24px 0 0;
+  text-shadow: 0 1px 9px #000;
+}
+.works-page .section-heading h2 {
+  font-size: clamp(64px, 7vw, 110px);
+  transform: none;
+}
+.about-page .about h2 {
+  font-size: clamp(50px, 5.5vw, 85px);
+  transform: none;
+  letter-spacing: -2px;
+}
+.contact-page .contact h2 {
+  font-size: clamp(64px, 7vw, 110px);
+  transform: none;
+}
+.contact-page .contact h2 span {
+  text-shadow: none;
+}
+.project-title h1 {
+  transform: none;
+}
+.text-link {
+  padding-right: 15px;
+}
+.next-project {
+  --cut: 25px;
+}
+@media (max-width: 600px) {
+  .home-page h1 {
+    font-size: clamp(39px, 9.7vw, 59px);
+    letter-spacing: -1.5px;
+  }
+  .hero-description {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 280px;
+    margin-top: 18px;
+  }
+  .home-page .hero-copy {
+    bottom: 177px;
+  }
+  .home-page .hero-copy .button {
+    margin-top: 18px;
+  }
+  .hero-bottom {
+    padding-top: 28px;
+    min-height: 140px;
+    clip-path: polygon(0 0, 18% 0, 22% 10px, 71% 10px, 75% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .works-page .section-heading h2 {
+    font-size: clamp(42px, 11vw, 65px);
+    letter-spacing: -1.5px;
+  }
+  .about-page .about h2 {
+    font-size: clamp(36px, 9vw, 54px);
+    letter-spacing: -1px;
+  }
+  .contact-page .contact h2 {
+    font-size: clamp(50px, 12vw, 72px);
+  }
+  .collage-slide[data-count="2"] .pane-1 {
+    left: -5%;
+    width: 68%;
+  }
+  .collage-slide[data-count="2"] .pane-2 {
+    left: 56%;
+    width: 51%;
+  }
+}
+/* Наклонные акценты и угловатая полоса под шапкой. */
+header {
+  border-bottom: 0;
+  position: relative;
+  z-index: 20;
+}
+header::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: var(--bg);
+  clip-path: polygon(0 0, 100% 0, 100% 6px, 73% 6px, 71% 100%, 31% 100%, 29% 6px, 0 6px);
+  pointer-events: none;
+}
+.home-page h1 {
+  transform: rotate(-3deg);
+  transform-origin: left center;
+}
+.home-page .hero-copy .button {
+  transform: rotate(-2deg);
+}
+.home-page .hero-copy .button:hover {
+  transform: rotate(-2deg) translateY(-2px);
+}
+.works-page .section-heading h2,
+.about-page .about h2,
+.contact-page .contact h2,
+.project-title h1 {
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+.filters button.active {
+  transform: rotate(-3deg);
+}
+.hero-description {
+  margin-top: 30px;
+}
+@media (max-width: 600px) {
+  header::after {
+    height: 13px;
+    clip-path: polygon(0 0, 100% 0, 100% 4px, 77% 4px, 73% 100%, 25% 100%, 21% 4px, 0 4px);
+  }
+  .home-page h1 {
+    transform: rotate(-2deg);
+  }
+  .hero-description {
+    margin-top: 24px;
+  }
+}

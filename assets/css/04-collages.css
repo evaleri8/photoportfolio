@@ -1,0 +1,351 @@
+/* Коллажи, галереи и управление слайдами */
+/* Project collages: one full frame, two torn sheets, or a three-photo montage. */
+.home-page .hero {
+  height: calc(100svh - 82px);
+  min-height: 650px;
+}
+.hero-collages,
+.collage-slide {
+  position: absolute;
+  inset: 0;
+}
+.hero-collages {
+  background: #131917;
+}
+.collage-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.85s ease,
+    visibility 0.85s;
+  overflow: hidden;
+}
+.collage-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.collage-pane {
+  position: absolute;
+  top: -3%;
+  height: 106%;
+  overflow: hidden;
+  background: #e4e0d6;
+  filter: drop-shadow(-8px 0 8px #0008);
+}
+.collage-pane img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.collage-slide[data-project="faces"] .pane-2 img {
+  filter: grayscale(1);
+}
+.collage-slide[data-count="1"] .pane-1 {
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background: none;
+  filter: none;
+}
+.collage-slide[data-count="2"] .pane-1 {
+  left: -2%;
+  width: 68%;
+  transform: rotate(-2deg);
+}
+.collage-slide[data-count="2"] .pane-2 {
+  left: 61%;
+  width: 42%;
+  transform: rotate(3deg);
+  clip-path: polygon(
+    8% 0,
+    5% 5%,
+    8% 9%,
+    3% 14%,
+    7% 19%,
+    2% 25%,
+    5% 30%,
+    1% 36%,
+    6% 42%,
+    2% 49%,
+    5% 55%,
+    0 62%,
+    4% 68%,
+    1% 75%,
+    5% 81%,
+    0 89%,
+    4% 94%,
+    2% 100%,
+    100% 100%,
+    100% 0
+  );
+}
+.collage-slide[data-count="2"] .pane-2 img {
+  transform: translateX(10px);
+}
+.collage-slide[data-count="3"] .pane-1 {
+  left: -3%;
+  width: 46%;
+  transform: rotate(-3deg);
+}
+.collage-slide[data-count="3"] .pane-2 {
+  left: 35%;
+  width: 40%;
+  transform: rotate(2deg);
+  clip-path: polygon(
+    5% 0,
+    2% 6%,
+    6% 12%,
+    1% 18%,
+    4% 25%,
+    0 32%,
+    5% 39%,
+    1% 46%,
+    4% 53%,
+    0 60%,
+    5% 67%,
+    1% 75%,
+    4% 83%,
+    0 90%,
+    3% 100%,
+    100% 100%,
+    100% 0
+  );
+}
+.collage-slide[data-count="3"] .pane-3 {
+  left: 69%;
+  width: 35%;
+  transform: rotate(-2deg);
+  clip-path: polygon(
+    7% 0,
+    3% 6%,
+    7% 13%,
+    2% 20%,
+    5% 28%,
+    0 34%,
+    6% 42%,
+    2% 49%,
+    6% 56%,
+    1% 63%,
+    5% 70%,
+    0 77%,
+    4% 85%,
+    1% 92%,
+    3% 100%,
+    100% 100%,
+    100% 0
+  );
+}
+.collage-slide[data-count="3"] .pane-2 img,
+.collage-slide[data-count="3"] .pane-3 img {
+  transform: translateX(8px);
+}
+.collage-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-page .hero-shade {
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #071110a6, transparent 85%),
+    linear-gradient(0deg, #06100eaa, transparent 75%);
+}
+.hero-bottom {
+  z-index: 5;
+  min-height: 80px;
+  gap: 20px;
+}
+.current-project {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.current-project small {
+  font: 9px monospace;
+  letter-spacing: 1px;
+}
+.current-project > span {
+  font: 600 22px Oswald;
+}
+.current-project > b {
+  font-size: 24px;
+}
+.collage-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.collage-controls > span {
+  font: 11px monospace;
+  min-width: 54px;
+}
+.collage-controls button {
+  color: #151a17;
+  background: none;
+  border: 1px solid #151a1755;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 5px;
+  font-size: 20px;
+}
+.collage-controls button:hover {
+  background: #151a17;
+  color: #ff692c;
+}
+.collage-controls button:focus-visible {
+  outline-color: #151a17;
+}
+.collage-dots {
+  display: flex;
+  gap: 7px;
+  margin: 0 15px;
+}
+.collage-dots button {
+  min-width: 10px;
+  min-height: 10px;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid #151a17;
+  transform: rotate(45deg);
+}
+.collage-dots button.active {
+  background: #151a17;
+}
+.project-photo-series {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 45px 4%;
+}
+.project-photo-series figure {
+  margin: 0;
+}
+.project-photo-series figure:only-child {
+  grid-column: 1/-1;
+  max-width: 900px;
+  margin: auto;
+  width: 100%;
+}
+.project-photo-series img {
+  display: block;
+  width: 100%;
+  max-height: 850px;
+  object-fit: cover;
+}
+.project-photo-series figcaption {
+  font: 10px monospace;
+  letter-spacing: 1px;
+  padding: 15px 0;
+  color: #c4c9bc;
+}
+.about-page .about,
+.contact-page .contact {
+  min-height: calc(100svh - 82px);
+}
+@media (max-width: 600px) {
+  .home-page .hero {
+    height: calc(100svh - 70px);
+    min-height: 650px;
+  }
+  .home-page .hero-copy {
+    bottom: 180px;
+  }
+  .hero-bottom {
+    padding: 18px 6%;
+    flex-wrap: wrap;
+    gap: 14px;
+    min-height: 126px;
+  }
+  .current-project {
+    gap: 14px;
+  }
+  .current-project > span {
+    font-size: 18px;
+  }
+  .current-project small {
+    font-size: 8px;
+  }
+  .collage-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .collage-dots {
+    margin: 0 8px;
+  }
+  .collage-slide[data-count="2"] .pane-1 {
+    left: -8%;
+    width: 82%;
+  }
+  .collage-slide[data-count="2"] .pane-2 {
+    left: 64%;
+    width: 45%;
+  }
+  .collage-slide[data-count="3"] .pane-1 {
+    left: -5%;
+    width: 64%;
+    height: 75%;
+    top: -2%;
+  }
+  .collage-slide[data-count="3"] .pane-2 {
+    left: 52%;
+    width: 56%;
+    height: 76%;
+    top: -2%;
+  }
+  .collage-slide[data-count="3"] .pane-3 {
+    left: -4%;
+    width: 110%;
+    height: 43%;
+    top: 65%;
+    transform: rotate(-3deg);
+    clip-path: polygon(
+      0 10%,
+      6% 5%,
+      12% 9%,
+      18% 3%,
+      24% 8%,
+      30% 2%,
+      37% 7%,
+      44% 0,
+      51% 5%,
+      58% 1%,
+      65% 6%,
+      72% 0,
+      80% 5%,
+      87% 1%,
+      94% 6%,
+      100% 2%,
+      100% 100%,
+      0 100%
+    );
+  }
+  .collage-slide[data-count="3"] .pane-3 img {
+    transform: translateY(9px);
+  }
+  .project-photo-series {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin: 25px 4%;
+  }
+  .about-page .about,
+  .contact-page .contact {
+    min-height: calc(100svh - 70px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collage-slide {
+    transition: none;
+  }
+  .collage-controls [data-collage-pause] {
+    display: none;
+  }
+}
+.collage-slide[data-count="2"] .pane-2 img,
+.collage-slide[data-count="3"] .pane-2 img,
+.collage-slide[data-count="3"] .pane-3 img {
+  clip-path: inherit;
+}

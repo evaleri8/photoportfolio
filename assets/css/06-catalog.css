@@ -1,0 +1,85 @@
+/* Категории и карточки каталога. Логика и тексты — в js/projects.js и js/works.js. */
+.brand .brand-dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+  font-size: 0;
+  flex-shrink: 0;
+}
+.works-page .filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px 10px;
+  padding-bottom: 24px;
+  margin-bottom: 18px;
+}
+.works-page .filters button {
+  white-space: nowrap;
+  padding: 12px 15px;
+  letter-spacing: 1px;
+}
+.category-summary {
+  min-height: 20px;
+  margin: 0 0 29px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.project-category-name {
+  display: block;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+.works-page .gallery.filtered {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  max-width: 1080px;
+}
+.works-page .gallery.filtered .project {
+  margin-top: 0;
+  transform: none;
+}
+.works-page .gallery.filtered .project:nth-child(n) .photo {
+  height: 470px;
+}
+.empty-category {
+  padding: 75px min(7%, 55px);
+  border: 1px solid #5c6155;
+  font: 600 clamp(27px, 4vw, 52px) Oswald, sans-serif;
+  letter-spacing: -0.5px;
+}
+.empty-category span {
+  display: block;
+  margin-top: 14px;
+  color: var(--muted);
+  font: 12px Manrope, sans-serif;
+  letter-spacing: 0;
+}
+.empty-category[hidden] { display: none; }
+.project-category-link:hover { color: var(--accent); }
+.project-not-found {
+  min-height: 55vh;
+  padding: 90px 6%;
+}
+.project-not-found h1 { font-size: clamp(44px, 8vw, 100px); margin-bottom: 40px; }
+@media (max-width: 900px) {
+  .brand .brand-dot { width: 14px; height: 14px; }
+}
+@media (max-width: 600px) {
+  .brand { gap: 12px; }
+  .brand .brand-dot { width: 13px; height: 13px; }
+  .works-page .filters { gap: 7px; margin-top: 24px; }
+  .works-page .filters button { font-size: 9px; letter-spacing: 0.2px; padding: 10px 9px; }
+  .works-page .filters sup { display: inline; margin-left: 4px; font-size: 7px; }
+  .category-summary { font-size: 9px; margin-bottom: 23px; }
+  .works-page .gallery.filtered { grid-template-columns: 1fr; }
+  .works-page .gallery.filtered .project:nth-child(n) .photo { height: 400px; }
+  .empty-category { padding: 48px 22px; }
+  .project-top { gap: 15px; }
+  .project-category-link { text-align: right; }
+}

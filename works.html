@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="#202222" name="theme-color" />
+    <meta
+      content="by.erzhee — студийные и выездные съёмки, концерты и мероприятия."
+      name="description"
+    />
+    <title>Работы — by.erzhee</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <script src="assets/js/intro-bootstrap.js"></script>
+  </head>
+  <body class="works-page">
+    <header id="site-header"></header>
+    <!-- Общая шапка для всех страниц. Меняется в assets/js/header.js. -->
+    <script src="assets/js/header.js"></script>
+    <main id="main">
+      <section class="works section" id="works">
+        <div class="section-heading">
+          <h2>ИЗБРАННЫЕ<br /><span class="outline">РАБОТЫ.</span></h2>
+          <div class="line"></div>
+          <span class="mono">СТУДИЯ / ВЫЕЗДЫ / КОНЦЕРТЫ / СОБЫТИЯ</span>
+        </div>
+        <!-- Категории и карточки автоматически создаёт assets/js/works.js -->
+        <div aria-label="Категории съёмок" class="filters" data-category-filters role="group"></div>
+        <p class="category-summary mono" data-category-summary aria-live="polite"></p>
+        <div class="gallery" data-project-list></div>
+        <p class="empty-category" data-empty-category hidden>
+          В ЭТОЙ КАТЕГОРИИ ПОКА НЕТ ПРОЕКТОВ.
+          <span>Здесь появятся новые серии фотографий.</span>
+        </p>
+        <noscript><p>Для просмотра каталога включите JavaScript в браузере.</p></noscript>
+        <p class="demo-note">Визуальная концепция · демонстрационные фотографии</p>
+      </section>
+    </main>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/intro.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/works.js"></script>
+  </body>
+</html>
