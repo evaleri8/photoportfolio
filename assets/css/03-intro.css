@@ -96,24 +96,6 @@ html.intro-active:has(.shutter-intro):before {
   letter-spacing: 2px;
   animation: shutter-type-out 0.25s 0.85s both;
 }
-.shutter-skip {
-  position: absolute;
-  bottom: 30px;
-  right: 4%;
-  padding: 13px 18px;
-  border: 1px solid #6f7a67;
-  background: #1c211f;
-  color: #eeeee7;
-  font:
-    10px Manrope,
-    Arial,
-    sans-serif;
-  letter-spacing: 2px;
-}
-.shutter-skip:hover {
-  background: #ff5a1f;
-  color: #171a18;
-}
 .intro-replay {
   background: none;
   border: 0;

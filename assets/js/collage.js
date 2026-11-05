@@ -84,7 +84,7 @@
   document.querySelector("[data-collage-prev]").addEventListener("click", () => show(current - 1));
   document.querySelector("[data-collage-next]").addEventListener("click", () => show(current + 1));
   function pauseUI() {
-    pause.textContent = paused ? "▶" : "Ⅱ";
+    pause.dataset.state = paused ? "paused" : "playing";
     pause.setAttribute(
       "aria-label",
       paused ? "Продолжить смену коллажей" : "Приостановить смену коллажей",

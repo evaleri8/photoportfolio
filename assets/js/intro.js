@@ -24,9 +24,10 @@
       (_, i) =>
         `<path class="iris-leaf" fill="${i % 2 ? "#1c211f" : "#242a26"}" stroke="#64705d" stroke-width="0.2" stroke-linejoin="round"/>`,
     ).join("");
-    overlay.innerHTML = `<svg class="shutter-mechanism" viewBox="-100 -100 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${blades}</svg><div class="shutter-hud" aria-hidden="true"><span>BY.ERZHEE / OPTICAL SYSTEM</span><span>FRAME 001 — f/1.8</span></div><div class="shutter-welcome"><span class="shutter-kicker">ПОРТФОЛИО ФОТОГРАФА</span><strong>by<span>•</span>ERZHEE</strong><span class="shutter-caption">ЛЮДИ / МУЗЫКА / ИСТОРИИ</span><i class="shutter-track" aria-hidden="true"></i></div><button class="shutter-skip" type="button">ПРОПУСТИТЬ ↗</button>`;
+    overlay.innerHTML = `<svg class="shutter-mechanism" viewBox="-100 -100 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${blades}</svg><div class="shutter-hud" aria-hidden="true"><span>BY.ERZHEE / OPTICAL SYSTEM</span><span>FRAME 001 — f/1.8</span></div><div class="shutter-welcome"><span class="shutter-kicker">ПОРТФОЛИО ФОТОГРАФА</span><strong>by<span>•</span>ERZHEE</strong><span class="shutter-caption">ЛЮДИ / МУЗЫКА / ИСТОРИИ</span><i class="shutter-track" aria-hidden="true"></i></div>`;
+    overlay.tabIndex = -1;
     document.body.appendChild(overlay);
-    overlay.querySelector("button").focus({ preventScroll: true });
+    overlay.focus({ preventScroll: true });
     let timer;
     let frame;
     const started = performance.now();
@@ -64,10 +65,9 @@
       if (e.key === "Escape") finish();
       if (e.key === "Tab") {
         e.preventDefault();
-        overlay.querySelector("button").focus();
+        overlay.focus({ preventScroll: true });
       }
     }
-    overlay.querySelector("button").addEventListener("click", finish);
     document.addEventListener("keydown", onKey);
     reduced.addEventListener("change", finish);
     try {

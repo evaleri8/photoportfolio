@@ -5,13 +5,11 @@ menu.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   menu.setAttribute("aria-expanded", open);
   menu.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
-  menu.textContent = open ? "×" : "☰";
 });
 nav.querySelectorAll("a").forEach((a) =>
   a.addEventListener("click", () => {
     nav.classList.remove("open");
     menu.setAttribute("aria-expanded", "false");
-    menu.textContent = "☰";
   }),
 );
 // Категории каталога и карточки теперь в assets/js/works.js.

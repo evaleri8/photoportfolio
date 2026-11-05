@@ -29,16 +29,14 @@
     number.textContent = formatCount(index + 1);
     const view = document.createElement('span');
     view.className = 'view';
-    view.textContent = 'ОТКРЫТЬ ПРОЕКТ ↗';
+    view.textContent = 'ОТКРЫТЬ ПРОЕКТ';
     photo.append(img, number, view);
 
     const caption = document.createElement('div');
     caption.className = 'caption';
     const name = document.createElement('span');
     name.textContent = `${formatCount(index + 1)} / ${project.title}`;
-    const arrow = document.createElement('span');
-    arrow.textContent = '↗';
-    caption.append(name, arrow);
+    caption.append(name);
 
     const type = document.createElement('span');
     type.className = 'project-category-name';

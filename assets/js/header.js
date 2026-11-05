@@ -32,8 +32,8 @@
       <span>by</span><i aria-hidden="true" class="brand-dot">•</i><b>ERZHEE</b>
     </a>
     <nav aria-label="Основная навигация" id="site-nav">${navLinks}</nav>
-    <a class="button header-cta" href="contact.html">ОБСУДИТЬ СЪЁМКУ <span>↗</span></a>
+    <a class="button header-cta" href="contact.html">ОБСУДИТЬ СЪЁМКУ</a>
     <button aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню"
-      class="menu" type="button">☰</button>
+      class="menu" type="button"></button>
   `;
 })();

@@ -19,10 +19,6 @@ header .brand b {
 nav a[aria-current="page"] {
   color: var(--accent);
 }
-nav a[aria-current="page"]:before {
-  content: "↗ ";
-  color: var(--accent);
-}
 .header-cta {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 94% 100%, 0 100%);
 }
@@ -374,9 +370,6 @@ footer {
 .next-project strong {
   font: 700 clamp(35px, 6vw, 90px) Oswald;
   line-height: 1.05;
-}
-.next-project b {
-  font-size: 70px;
 }
 .next-project:hover {
   background: var(--paper);

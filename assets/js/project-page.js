@@ -21,7 +21,7 @@
     document.title = 'Проект не найден — by.erzhee';
     const message = el('section', 'project-not-found');
     message.append(el('h1', '', 'ПРОЕКТ НЕ НАЙДЕН.'));
-    const link = el('a', 'button', '← ВЕРНУТЬСЯ КО ВСЕМ РАБОТАМ');
+    const link = el('a', 'button', 'ВЕРНУТЬСЯ КО ВСЕМ РАБОТАМ');
     link.href = 'works.html';
     message.append(link);
     root.replaceChildren(message);
@@ -35,7 +35,7 @@
 
   const intro = el('section', 'project-intro');
   const top = el('div', 'project-top');
-  const back = el('a', '', '← ВСЕ РАБОТЫ');
+  const back = el('a', '', 'ВСЕ РАБОТЫ');
   back.href = 'works.html';
   const category = el('a', 'project-category-link', `${project.categoryTitle} / ${ordinal}`);
   category.href = `works.html?category=${encodeURIComponent(project.categoryId)}`;
@@ -79,7 +79,7 @@
   const story = el('section', 'project-story-text');
   story.append(el('span', 'eyebrow orange', `ЗА КАДРОМ / ${ordinal}`));
   story.append(el('p', '', project.story || project.summary || ''));
-  const contact = el('a', 'text-link', 'ОБСУДИТЬ ПОХОЖУЮ СЪЁМКУ ↗');
+  const contact = el('a', 'text-link', 'ОБСУДИТЬ ПОХОЖУЮ СЪЁМКУ');
   contact.href = 'contact.html';
   story.append(contact);
 
@@ -88,7 +88,6 @@
   nextLink.href = next.url;
   nextLink.append(el('span', '', 'СЛЕДУЮЩИЙ ПРОЕКТ'));
   nextLink.append(el('strong', '', next.title));
-  nextLink.append(el('b', '', '↗'));
 
   const parts = [intro, cover];
   if (photos.children.length) parts.push(photos);

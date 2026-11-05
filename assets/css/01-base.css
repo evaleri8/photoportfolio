@@ -373,9 +373,6 @@ h1 span:after {
   font: 500 16px Oswald;
   letter-spacing: 0.5px;
 }
-.caption > span:last-child {
-  font-size: 24px;
-}
 .project small {
   font-size: 10px;
   color: var(--muted);

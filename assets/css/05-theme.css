@@ -207,3 +207,51 @@ header::after {
     margin-top: 24px;
   }
 }
+
+/* v5 — лаконичная навигация без текстовых стрелок и пиктограмм. */
+
+/* Предыдущий / следующий коллаж: тонкие рисованные шевроны. */
+.collage-controls [data-collage-prev],
+.collage-controls [data-collage-next],
+.collage-controls [data-collage-pause] { position: relative; }
+.collage-controls [data-collage-prev]::before,
+.collage-controls [data-collage-next]::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 1.7px solid currentColor;
+  border-right: 1.7px solid currentColor;
+  top: 50%; left: 50%;
+}
+.collage-controls [data-collage-prev]::before { transform: translate(-35%, -50%) rotate(-135deg); }
+.collage-controls [data-collage-next]::before { transform: translate(-65%, -50%) rotate(45deg); }
+.collage-controls [data-collage-pause]::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, currentColor 0 3px, transparent 3px 7px, currentColor 7px 10px);
+}
+.collage-controls [data-collage-pause][data-state="paused"]::before {
+  width: 11px; height: 13px;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Бургер-меню: векторные линии средствами CSS, без символьного значка. */
+.menu { position: relative; width: 44px; height: 38px; }
+.menu::before, .menu::after {
+  content: ""; position: absolute; left: 12px; right: 12px;
+  height: 1.5px; background: currentColor;
+  transition: transform .2s, top .2s;
+}
+.menu::before { top: 15px; }
+.menu::after { top: 22px; }
+.menu[aria-expanded="true"]::before { top: 19px; transform: rotate(45deg); }
+.menu[aria-expanded="true"]::after { top: 19px; transform: rotate(-45deg); }
+
+/* В блоке пустой категории только текст, без случайной декоративной звёздочки. */
+.explorer-empty span { display: none; }

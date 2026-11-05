@@ -117,7 +117,7 @@
       } else {
         const empty = document.createElement('p');
         empty.className = 'explorer-empty';
-        empty.innerHTML = '<span aria-hidden="true">✳</span> СКОРО ЗДЕСЬ ПОЯВЯТСЯ<br />НОВЫЕ ИСТОРИИ.';
+        empty.innerHTML = 'СКОРО ЗДЕСЬ ПОЯВЯТСЯ<br />НОВЫЕ ИСТОРИИ.';
         photoField.append(empty);
       }
       caption.textContent = category ? category.title : 'ИЗБРАННЫЕ КАДРЫ / BY.ERZHEE';
