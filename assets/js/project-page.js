@@ -51,13 +51,56 @@
   intro.append(top, title);
 
   const cover = el('figure', `project-cover${project.grayscale ? ' mono-photo' : ''}`);
+  const allPhotos = project.photos || [];
+  const viewer = el('dialog', 'photo-viewer');
+  viewer.setAttribute('aria-label', 'Просмотр фотографий проекта');
+  const viewerImage = el('img', 'photo-viewer-image');
+  const viewerCount = el('span', 'photo-viewer-count');
+  viewerCount.setAttribute('aria-live', 'polite');
+  const close = el('button', 'photo-viewer-close', 'ЗАКРЫТЬ');
+  const prev = el('button', 'photo-viewer-prev', 'НАЗАД');
+  const nextPhoto = el('button', 'photo-viewer-next', 'ДАЛЕЕ');
+  [close, prev, nextPhoto].forEach((button) => { button.type = 'button'; });
+  close.setAttribute('aria-label', 'Закрыть просмотр');
+  const controls = el('div', 'photo-viewer-controls');
+  controls.append(prev, viewerCount, nextPhoto);
+  viewer.append(close, viewerImage, controls);
+  let currentPhoto = 0;
+  function showPhoto(index) {
+    currentPhoto = (index + allPhotos.length) % allPhotos.length;
+    const photo = allPhotos[currentPhoto];
+    viewerImage.src = photo.src;
+    viewerImage.alt = photo.alt || `${project.title} — фото ${currentPhoto + 1}`;
+    viewerCount.textContent = `${currentPhoto + 1} / ${allPhotos.length}`;
+    prev.hidden = nextPhoto.hidden = allPhotos.length < 2;
+  }
+  close.addEventListener('click', () => viewer.close());
+  prev.addEventListener('click', () => showPhoto(currentPhoto - 1));
+  nextPhoto.addEventListener('click', () => showPhoto(currentPhoto + 1));
+  viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
+  viewer.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(currentPhoto - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); showPhoto(currentPhoto + 1); }
+  });
+  function photoButton(photo, index) {
+    const button = el('button', `project-photo-open${photo.orientation === 'portrait' ? ' is-portrait' : ''}`);
+    button.type = 'button';
+    button.setAttribute('aria-label', `Открыть фото ${index + 1} из ${allPhotos.length}: ${photo.alt || project.title}`);
+    const img = el('img');
+    img.addEventListener('load', () => {
+      if (img.naturalHeight > img.naturalWidth) button.classList.add('is-portrait');
+    });
+    img.src = photo.src;
+    img.alt = photo.alt || `${project.title} — фото ${index + 1}`;
+    if (index) img.loading = 'lazy';
+    img.style.objectPosition = photo.position || 'center';
+    button.append(img);
+    button.addEventListener('click', () => { showPhoto(index); viewer.showModal(); close.focus(); });
+    return button;
+  }
   const coverPhoto = project.photos?.[0];
   if (coverPhoto) {
-    const img = el('img');
-    img.src = coverPhoto.src;
-    img.alt = coverPhoto.alt || project.title;
-    img.style.objectPosition = coverPhoto.position || 'center';
-    cover.append(img);
+    cover.append(photoButton(coverPhoto, 0));
   }
   const caption = el('figcaption');
   caption.append(el('span', '', `by.erzhee / ${ordinal}`), el('span', '', project.categoryTitle));
@@ -67,12 +110,7 @@
   photos.setAttribute('aria-label', `Фотографии проекта «${project.title}»`);
   (project.photos || []).slice(1).forEach((photo, index) => {
     const figure = el('figure');
-    const img = el('img');
-    img.src = photo.src;
-    img.alt = photo.alt || `${project.title} — фото ${index + 2}`;
-    img.loading = 'lazy';
-    img.style.objectPosition = photo.position || 'center';
-    figure.append(img, el('figcaption', '', `${String(index + 2).padStart(2, '0')} / ${project.title}`));
+    figure.append(photoButton(photo, index + 1), el('figcaption', '', `${String(index + 2).padStart(2, '0')} / ${project.title}`));
     photos.append(figure);
   });
 
@@ -91,6 +129,6 @@
 
   const parts = [intro, cover];
   if (photos.children.length) parts.push(photos);
-  parts.push(story, nextLink);
+  parts.push(story, nextLink, viewer);
   root.replaceChildren(...parts);
 })();

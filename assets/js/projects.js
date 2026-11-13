@@ -101,7 +101,7 @@ window.PORTFOLIO_CATEGORIES = [
         order: 5,
         title: "СВЕТ СЦЕНЫ / ДЕМО",
         heading: ["СВЕТ", "СЦЕНЫ"],
-        subtitle: "Демонстрационная серия из восьми фотографий.",
+        subtitle: "Демонстрационная серия из десяти фотографий.",
         summary: "Пример оформления концертной серии; фотографии Unsplash.",
         story: "Демонстрационный проект показывает, как выглядит серия из нескольких кадров. Замените эти фотографии своими работами.",
         photos: [
@@ -110,7 +110,9 @@ window.PORTFOLIO_CATEGORIES = [
           { src: "assets/images/live-3.jpg", alt: "Концертное освещение" },
           { src: "assets/images/demo-stage-01.jpg", alt: "Музыка и сценический свет" },
           { src: "assets/images/demo-stage-02.jpg", alt: "Зрители на концерте" },
+          { src: "assets/images/demo-portrait-01.jpg", alt: "Микрофон в сценическом свете", orientation: "portrait" },
           { src: "assets/images/demo-stage-03.jpg", alt: "Концертный зал" },
+          { src: "assets/images/demo-portrait-02.jpg", alt: "Неоновая вывеска о музыке", orientation: "portrait" },
           { src: "assets/images/demo-stage-04.jpg", alt: "Выступление на сцене" },
           { src: "assets/images/demo-stage-05.jpg", alt: "Музыкант во время выступления" },
         ],

@@ -13,5 +13,7 @@
 | `demo-stage-03.jpg` | https://images.unsplash.com/photo-1540039155733-5bb30b53aa14 |
 | `demo-stage-04.jpg` | https://images.unsplash.com/photo-1514525253161-7a46d19cd819 |
 | `demo-stage-05.jpg` | https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f |
+| `demo-portrait-01.jpg` | https://images.unsplash.com/photo-1516280440614-37939bbacd81 |
+| `demo-portrait-02.jpg` | https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad |
 
 Файлы лежат в `assets/images/`. Замените демонстрационные материалы своими съёмками.
