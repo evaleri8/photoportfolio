@@ -15,6 +15,14 @@
       const photos = selected.slice(0, phone.matches ? 2 : 3);
       slide.dataset.count = photos.length;
       slide.replaceChildren();
+      const backdrop = document.createElement("img");
+      backdrop.className = "collage-backdrop";
+      backdrop.src = photos[0].src;
+      backdrop.alt = "";
+      backdrop.setAttribute("aria-hidden", "true");
+      const frame = document.createElement("div");
+      frame.className = "collage-frame";
+      slide.append(backdrop, frame);
       photos.forEach((photo, j) => {
         const pane = document.createElement("div");
         pane.className = `collage-pane pane-${j + 1}`;
@@ -25,7 +33,7 @@
         img.decoding = "async";
         if (!i) img.fetchPriority = "high";
         pane.append(img);
-        slide.append(pane);
+        frame.append(pane);
       });
     }
     renderPhotos();
