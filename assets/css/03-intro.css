@@ -37,6 +37,24 @@ html.intro-active:has(.shutter-intro):before {
   overflow: visible;
 }
 
+.lens-rings {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(56vw, 56vh);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(186, 202, 185, .25);
+  box-shadow: 0 0 0 10px rgba(14, 19, 17, .25), 0 0 0 11px rgba(186, 202, 185, .15), 0 0 0 24px rgba(14, 19, 17, .2), 0 0 0 25px rgba(186, 202, 185, .12), inset 0 0 35px rgba(0, 0, 0, .35);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: lens-rings-out .65s 1.05s both;
+}
+
+@keyframes lens-rings-out {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+}
+
 .shutter-welcome {
   position: absolute;
   inset: 0;
