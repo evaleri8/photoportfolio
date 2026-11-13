@@ -97,6 +97,25 @@ window.PORTFOLIO_CATEGORIES = [
     description: "Музыка, свет сцены и эмоции зрителей.",
     projects: [
       {
+        id: "stage-demo",
+        order: 5,
+        title: "СВЕТ СЦЕНЫ / ДЕМО",
+        heading: ["СВЕТ", "СЦЕНЫ"],
+        subtitle: "Демонстрационная серия из восьми фотографий.",
+        summary: "Пример оформления концертной серии; фотографии Unsplash.",
+        story: "Демонстрационный проект показывает, как выглядит серия из нескольких кадров. Замените эти фотографии своими работами.",
+        photos: [
+          { src: "assets/images/live.jpg", alt: "Зрители перед освещённой сценой" },
+          { src: "assets/images/live-2.jpg", alt: "Музыкальный фестиваль" },
+          { src: "assets/images/live-3.jpg", alt: "Концертное освещение" },
+          { src: "assets/images/demo-stage-01.jpg", alt: "Музыка и сценический свет" },
+          { src: "assets/images/demo-stage-02.jpg", alt: "Зрители на концерте" },
+          { src: "assets/images/demo-stage-03.jpg", alt: "Концертный зал" },
+          { src: "assets/images/demo-stage-04.jpg", alt: "Выступление на сцене" },
+          { src: "assets/images/demo-stage-05.jpg", alt: "Музыкант во время выступления" },
+        ],
+      },
+      {
         id: "live",
         order: 1,
         title: "LIVE ENERGY",
@@ -124,6 +143,15 @@ window.PORTFOLIO_CATEGORIES = [
   },
   
 ];
+
+// Проекты, добавленные помощником. Не удаляйте метки: они нужны помощнику.
+// EXTRA_PROJECTS_START
+const extraProjects = [];
+// EXTRA_PROJECTS_END
+extraProjects.forEach(({ categoryId, ...project }) => {
+  const category = window.PORTFOLIO_CATEGORIES.find((item) => item.id === categoryId);
+  if (category) category.projects.push(project);
+});
 
 // Вспомогательный плоский список для всех страниц и коллажей.
 // Не редактируйте его вручную — он собирается из категорий выше.

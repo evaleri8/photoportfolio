@@ -18,17 +18,18 @@
     overlay.setAttribute("role", "dialog");
     overlay.setAttribute("aria-modal", "true");
     overlay.setAttribute("aria-label", "Добро пожаловать в by.erzhee");
-    // Лепестки соприкасаются и образуют общее вращающееся отверстие.
+    // Восемь перекрывающихся лепестков образуют вращающуюся диафрагму.
     const blades = Array.from(
-      { length: 6 },
+      { length: 8 },
       (_, i) =>
-        `<path class="iris-leaf" fill="${i % 2 ? "#1c211f" : "#242a26"}" ` +
-        'stroke="#64705d" stroke-width="0.2" stroke-linejoin="round"/>',
+        `<path class="iris-leaf" fill="${i % 2 ? "#1b211f" : "#2c3430"}" ` +
+        'stroke="#59645b" stroke-width="0.45" stroke-linejoin="round"/>',
     ).join("");
     // Собираем элементы заставки из отдельных строк без лишних пробелов в разметке.
     overlay.innerHTML = [
       `<svg class="shutter-mechanism" viewBox="-100 -100 200 200" ` +
         `preserveAspectRatio="xMidYMid slice" aria-hidden="true">${blades}</svg>`,
+      '<div class="lens-rings" aria-hidden="true"></div>',
       '<div class="shutter-hud" aria-hidden="true">',
       '<span>BY.ERZHEE / OPTICAL SYSTEM</span>',
       '<span>FRAME 001 — f/1.8</span>',
@@ -50,15 +51,15 @@
     function draw(now) {
       const progress = Math.min(1, Math.max(0, (now - started - 1100) / 1500));
       const eased = progress * progress * (3 - 2 * progress);
-      const radius = 245 * eased;
-      const twist = ((30 - 50 * eased) * Math.PI) / 180;
+      const radius = 300 * eased;
+      const twist = ((25 - 55 * eased) * Math.PI) / 180;
       const point = (r, a) => `${(r * Math.cos(a)).toFixed(4)},${(r * Math.sin(a)).toFixed(4)}`;
       paths.forEach((path, i) => {
-        const a = (i * Math.PI) / 3;
-        const b = ((i + 1) * Math.PI) / 3;
+        const a = (i * Math.PI) / 4;
+        const b = ((i + 1) * Math.PI) / 4;
         path.setAttribute(
           "d",
-          `M ${point(radius, a + twist)} L ${point(radius, b + twist)} L ${point(600, b)} L ${point(600, a)} Z`,
+          `M ${point(radius, a + twist)} L ${point(radius, b + twist)} L ${point(700, b)} L ${point(700, a)} Z`,
         );
       });
       if (progress < 1) frame = requestAnimationFrame(draw);
