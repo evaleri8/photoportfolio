@@ -675,13 +675,6 @@ dialog button {
   top: 10px;
 }
 
-@media (min-width: 1600px) {
-  body {
-    max-width: 1920px;
-    margin: auto;
-  }
-}
-
 @media (max-width: 900px) {
   header {
     gap: 20px;

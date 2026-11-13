@@ -1,0 +1,93 @@
+/* Размеры подстраиваются под ширину окна и доступны на коротких экранах. */
+body {
+  width: 100%;
+}
+
+.home-page .hero {
+  height: calc(100svh - 82px);
+  min-height: 650px;
+  max-height: none;
+}
+
+.home-page h1 {
+  font-size: clamp(66px, 7.5vw, 220px);
+}
+
+.home-page .hero-copy {
+  max-width: 90%;
+}
+
+.gallery,
+.about,
+.contact,
+.project-photo-series {
+  min-width: 0;
+}
+
+@media (min-width: 2000px) {
+  .hero-description {
+    max-width: 560px;
+    font-size: clamp(16px, .8vw, 24px);
+  }
+  .home-page .hero-copy {
+    bottom: clamp(145px, 8vh, 220px);
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 70px;
+  }
+  header .brand b {
+    font-size: clamp(30px, 9vw, 38px);
+  }
+  nav.open {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .home-page .hero {
+    height: calc(100svh - 70px);
+    min-height: 600px;
+  }
+  .home-page h1 {
+    font-size: clamp(34px, 9.7vw, 59px);
+    letter-spacing: -1.5px;
+  }
+  .home-page .hero-copy {
+    max-width: 88%;
+    bottom: 175px;
+  }
+  .hero-bottom {
+    min-height: 140px;
+  }
+  .gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .contact-page .contact h1 {
+    font-size: clamp(45px, 15vw, 95px);
+  }
+}
+
+@media (max-width: 360px) {
+  .home-page h1 {
+    font-size: 9.4vw;
+  }
+  .home-page .hero-copy {
+    bottom: 170px;
+  }
+  .collage-controls {
+    gap: 4px;
+  }
+  .collage-dots {
+    margin: 0;
+  }
+  .current-project > span {
+    font-size: 16px;
+  }
+}
